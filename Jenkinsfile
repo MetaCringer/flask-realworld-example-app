@@ -6,7 +6,7 @@ pipeline {
     agent {
         docker {
             image 'python'
-            args "-u root"
+            // args "-u root"
         }
     }
     stages {
@@ -18,7 +18,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
-                sh 'python -m pip install pipenv'
+                // sh 'python -m pip install pipenv'
                 sh 'pip3 install -r requirements.txt'
                 snykSecurity failOnIssues: false, snykInstallation: "${SNYK_TOOL}", snykTokenId: "${SNYK_TOKEN_ID}", targetFile: 'requirements.txt'
                 withCredentials([usernamePassword(credentialsId: "${ARTIFACTORY_TOKEN_ID}", usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
