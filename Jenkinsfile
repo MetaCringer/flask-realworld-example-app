@@ -6,7 +6,7 @@ pipeline {
     agent {
         docker {
             image 'python'
-            args "--privileged"
+            args "-u root"
         }
     }
     stages {
