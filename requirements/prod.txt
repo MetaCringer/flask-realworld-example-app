@@ -12,7 +12,7 @@ Flask
 PyJWT
 Flask-JWT-Extended
 unicode_slugify
-psycopg2
+psycopg2-binary
 Flask-Migrate
 gunicorn
 Flask-Cors
