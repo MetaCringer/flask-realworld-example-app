@@ -1,8 +1,14 @@
 pipeline {
     agent any
-
+    tools {
+        snyk "${SNYK_TOOL}"
+    }
     stages {
-
+        stage('Clone repo') {
+            steps {
+                git "${REPO}"
+            }
+        }
         stage('Test') {
             steps {
                 echo 'Testing..'
