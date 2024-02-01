@@ -1,7 +1,12 @@
 pipeline {
-    agent any
     tools {
         snyk "${SNYK_TOOL}"
+        dockerTool "${DOCKER_TOOL}"
+    }
+    agent {
+        docker {
+            image 'python'
+        }
     }
     stages {
         stage('Clone repo') {
