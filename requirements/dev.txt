@@ -7,3 +7,4 @@ WebTest
 factory-boy
 # For python 3
 Faker
+zipp>=3.19.1 # not directly required, pinned by Snyk to avoid a vulnerability
