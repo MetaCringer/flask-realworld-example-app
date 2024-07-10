@@ -16,3 +16,4 @@ psycopg2-binary
 Flask-Migrate
 gunicorn
 Flask-Cors
+zipp>=3.19.1 # not directly required, pinned by Snyk to avoid a vulnerability
